@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anika Gandotra | CV</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f5f3ee;
+    color: #222;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.subtitle {
+    color: #777;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+.section {
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.section-header {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    background: #fff;
+    transition: background 0.3s ease;
+    position: relative;
+    user-select: none;
+}
+.section-header:hover {
+    background: #f0ede6;
+}
+.section-header::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+.section.active .section-header::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+.section.active .section-content {
+    max-height: 2000px;
+    padding: 20px;
+}
+.job, .education-item {
+    margin-bottom: 20px;
+}
+.job:last-child, .education-item:last-child {
+    margin-bottom: 0;
+}
+.job-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+.job-company {
+    color: #555;
+    margin-top: 3px;
+}
+.job-date {
+    color: #999;
+    font-size: 14px;
+    margin-top: 3px;
+}
+ul {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Anika Gandotra</h1>
+    <p class="subtitle">Interactive CV</p>
+    
+    <div class="section">
+        <div class="section-header">Experience</div>
+        <div class="section-content">
+            <div class="job">
+                <div class="job-title">Senior Product Manager</div>
+                <div class="job-company">Tech Company</div>
+                <div class="job-date">2020 - Present</div>
+                <ul>
+                    <li>Led cross-functional teams</li>
+                    <li>Launched 3 major products</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-header">Education</div>
+        <div class="section-content">
+            <div class="education-item">
+                <div class="job-title">MBA</div>
+                <div class="job-company">University Name</div>
+                <div class="job-date">2018 - 2020</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-header">Skills</div>
+        <div class="section-content">
+            <ul>
+                <li>Product Management</li>
+                <li>Data Analysis</li>
+                <li>Team Leadership</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.section-header').forEach(header => {
+    header.addEventListener('click', function() {
+        this.parentElement.classList.toggle('active');
+    });
+});
+</script>
+</body>
+</html>
